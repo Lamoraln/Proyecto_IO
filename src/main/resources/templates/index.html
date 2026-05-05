@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>TextilOptimizer | Gestión de Producción</title>
+    <link rel="stylesheet" href="../static/css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-scissors"></i> Textil<strong>Optimizer</strong></div>
+        <div class="user-info">Planificación De Temporada</div>
+    </nav>
+
+    <main class="dashboard">
+        <!-- Izquierda: Configuración -->
+        <aside class="sidebar">
+            <section class="card">
+                <h3><i class="fas fa-tshirt"></i> Gestión de Catálogo</h3>
+                <p class="helper">Añade prendas y define su utilidad neta.</p>
+                
+                <div class="quick-add">
+                    <input type="text" id="nombre-prenda" placeholder="Ej: Chaqueta Cuero"></div>
+                    <input type="number" id="precio-prenda" placeholder="$">
+                    <button onclick="addPrenda()" class="btn-primary-sm"><i class="fas fa-plus"></i></button>
+                </div>
+
+                <div id="productos-list" class="products-container">
+                    <!-- Lista con opción de borrar -->
+                </div>
+            </section>
+
+            <section class="card">
+                <h3><i class="fas fa-warehouse"></i> Recursos del Taller</h3>
+                <p class="helper">Define insumos limitantes (Tela, Horas, etc).</p>
+                <div class="quick-add">
+                    <input type="text" id="nombre-recurso" placeholder="Ej: Tela (m2)">
+                    <button onclick="addRecurso()" class="btn-primary-sm"><i class="fas fa-plus"></i></button>
+                </div>
+                <div id="recursos-list-items" class="products-container">
+                    <!-- Lista de recursos -->
+                </div>
+            </section>
+
+                    <section class="content">
+            <!-- Zona de Resumen Informativo -->
+            <section class="card summary-panel">
+                <div class="summary-header">
+                    <h3><i class="fas fa-list-check"></i> Resumen de Margen por Prenda</h3>
+                    <span class="badge-count" id="count-prendas">0 Prendas</span>
+                </div>
+                <div id="resumen-lista-simple" class="summary-grid">
+                    <!-- Solo lectura -->
+                </div>
+            </section>
+        </aside>
+
+        <!-- Derecha: Matriz y Resumen -->
+
+            <div class="card main-panel">
+                <h3><i class="fas fa-chart-line"></i> Coeficientes de Consumo</h3>
+                <p class="helper">Indica cuánto de cada recurso consume cada prenda.</p>
+                <div id="matriz-container" class="table-responsive">
+                    <!-- Tabla dinámica -->
+                </div>
+                <button onclick="optimizar()" class="btn-execute">
+                    <i class="fas fa-play"></i> Calcular Plan
+                </button>
+            </div>
+
+            <div id="results-area" class="hidden"></div>
+        </section>
+    </main>
+
+    <script src="../static/js/logica.js"></script>
+</body>
+</html>
