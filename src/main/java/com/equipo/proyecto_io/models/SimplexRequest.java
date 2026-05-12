@@ -10,6 +10,8 @@ public class SimplexRequest {
     private double[] utilidades;
     private List<String> nombres; 
     private List<String> operadores;
+    // --- NUEVO CAMPO ---
+    private List<String> nombresRecursos;
 
     // Getters y Setters
     public List<String> getOperadores() { 
@@ -44,5 +46,14 @@ public class SimplexRequest {
 
     public void setUtilidades(double[] utilidades) {
         this.utilidades = utilidades;
+    }
+
+    // --- NUEVOS GETTER Y SETTER ---
+    public List<String> getNombresRecursos() {
+        return nombresRecursos;
+    }
+
+    public void setNombresRecursos(List<String> nombresRecursos) {
+        this.nombresRecursos = nombresRecursos;
     }
 }

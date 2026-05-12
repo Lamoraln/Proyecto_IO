@@ -20,7 +20,13 @@ public class SimplexController {
 
     @PostMapping("/optimizar")
     public SimplexService.SimplexResult optimizar(@RequestBody SimplexRequest request) {
-        // Llamamos al método resolver que ya programamos
-        return simplexService.resolver(request.getMatriz(), request.getUtilidades(), request.getOperadores(), request.getNombres());
+        // CORRECCIÓN: Ahora pasamos 5 parámetros al método resolver
+        return simplexService.resolver(
+            request.getMatriz(), 
+            request.getUtilidades(), 
+            request.getOperadores(), 
+            request.getNombres(),
+            request.getNombresRecursos() // <-- Nuevo parámetro
+        );
     }
 }
