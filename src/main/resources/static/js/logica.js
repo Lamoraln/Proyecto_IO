@@ -163,7 +163,7 @@ async function optimizar() {
 
     // ... try/catch del fetch ...
     try {
-        const urlBackend = 'http://127.0.0.1:8080/api/simplex/optimizar';
+        const urlBackend = '/api/simplex/optimizar';
         const response = await fetch(urlBackend, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
